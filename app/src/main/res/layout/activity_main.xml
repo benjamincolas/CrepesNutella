@@ -2,15 +2,18 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        style="?android:progressBarStyleHorizontal"
+        android:progress="30"
+        android:progressDrawable="@drawable/circle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar3"
@@ -21,9 +24,11 @@
 
     <ProgressBar
         android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        style="?android:progressBarStyleHorizontal"
+        android:progress="50"
+        android:progressDrawable="@drawable/circle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar4"
@@ -33,55 +38,85 @@
 
     <ProgressBar
         android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
+        android:progress="60"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar5"
         app:layout_constraintEnd_toStartOf="@+id/progressBar4"
-        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <ProgressBar
         android:id="@+id/progressBar4"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
+        android:progress="90"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/progressBar3"
         app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
 
     <ProgressBar
         android:id="@+id/progressBar5"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:progress="10"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/btnPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/appli_titre"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnPhoto"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar5"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/btnsos"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/sos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/btnPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar5"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/btnTorche"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_torche"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPhoto"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar5"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="411dp"
+        tools:layout_editor_absoluteY="658dp">
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
