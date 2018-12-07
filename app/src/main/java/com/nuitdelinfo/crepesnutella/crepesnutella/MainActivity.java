@@ -83,8 +83,12 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeTop() {
             }
             public void onSwipeRight() {
+                Intent unIntent = new Intent(MainActivity.this,checkList.class);
+                MainActivity.this.startActivityForResult(unIntent, code_fenetre);
             }
             public void onSwipeLeft() {
+                Intent unIntent = new Intent(MainActivity.this,machine.class);
+                MainActivity.this.startActivityForResult(unIntent, code_fenetre);
             }
             public void onSwipeBottom() {
                 Intent unIntent = new Intent(MainActivity.this,map.class);

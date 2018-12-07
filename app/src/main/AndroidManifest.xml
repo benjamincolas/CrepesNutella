@@ -29,8 +29,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>$====
-        <activity android:name=".map"></activity>
+        </activity>
+        $====
+        <activity android:name=".map" />
+        <activity android:name=".machine" />
+        <activity android:name=".checkList"></activity>
     </application>
 
 </manifest>
