@@ -1,8 +1,10 @@
 package com.nuitdelinfo.crepesnutella.crepesnutella;
 
-import android.support.v7.app.AppCompatActivity;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -16,18 +18,34 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 
 public class meteoActivity extends AppCompatActivity {
 
+    private ImageView map;
+    private final int code_fenetre=20;
     private TextView t1_temp,t5_humi;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meteo);
+
+        map = (ImageView) this.findViewById(R.id.imageView);
+        map.setOnTouchListener(new OnSwipeTouchListener(meteoActivity.this) {
+            public void onSwipeTop() {
+
+            }
+            public void onSwipeRight() {
+            }
+            public void onSwipeLeft() {
+            }
+            public void onSwipeBottom() {
+                Intent unIntent = new Intent(meteoActivity.this,MainActivity.class);
+                meteoActivity.this.startActivityForResult(unIntent, code_fenetre);
+            }
+
+        });
 
 
     t1_temp = (TextView)findViewById(R.id.txttemp);

@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         layout = (ConstraintLayout)this.findViewById(R.id.layout);
         layout.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
             public void onSwipeTop() {
+                Intent unIntent = new Intent(MainActivity.this,meteoActivity.class);
+                MainActivity.this.startActivityForResult(unIntent, code_fenetre);
             }
             public void onSwipeRight() {
                 Intent unIntent = new Intent(MainActivity.this,checkList.class);
